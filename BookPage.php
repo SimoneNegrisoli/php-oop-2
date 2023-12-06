@@ -18,13 +18,7 @@
 
     <div class="container">
         <?php
-        include __DIR__."/Views/header.php";
-        ?>
-        <?php
-        include __DIR__."/Views/main.php";
-        ?>
-        <?php
-        include __DIR__."/Views/footer.php";
+        include __DIR__."/Views/BookContent.php";
         ?>
     </div>
 

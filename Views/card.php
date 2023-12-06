@@ -13,10 +13,18 @@
             </p>
             <div class="d-flex justify-content-between align-items-flex-start">
                 <?= $custom ?>
-                <div>
-                </div>
             </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    Qantita:
+                    <?php echo $quantity ?>
+                </div>
+                <div>
+                    Prezzo:
+                    <?php echo $price ?> $
+                </div>
 
+            </div>
         </div>
     </div>
 </div>
