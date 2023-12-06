@@ -17,6 +17,7 @@
 <body>
 
     <div class="container">
+
         <?php
         include __DIR__."/Views/BookContent.php";
         ?>

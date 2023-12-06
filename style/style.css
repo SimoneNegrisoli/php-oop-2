@@ -5,3 +5,17 @@
 .myflag{
     width: 25px;
 }
+
+.mycard-h{
+    width: 100%;
+    height: 750px;
+}
+.mycard-h .mycard-bd{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+.mycard-h .mainimg{
+    height: 500px;
+    object-fit: cover;
+}

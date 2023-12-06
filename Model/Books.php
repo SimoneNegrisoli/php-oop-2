@@ -1,10 +1,8 @@
-<!-- per fare un'unica card avrei dovuto dare le caratteristiche generali della card tipo titolo, immagine e id, a tutte e tre tramite il parent, e poi ad ognuna ci aggiungevo quello che volevo -->
-
-
 
 <?php
+include __DIR__ .'/Product.php';
 
-class Book {
+class Book extends Product {
     private $id;
     private $title;
     private $longDescription;
@@ -12,10 +10,11 @@ class Book {
 
 
 
-    function __construct($id, $title, $longDescription, $image) {
-        $this->id = $id;
+    function __construct($title, $image , $longDescription, $quantity, $price) {
+
+        parent::__construct($quantity, $price);
         $this->title = $title;
-        //$this->longDescription = $longDescription;
+        $this->longDescription = $longDescription;
         $this->thumbnailUrl = $image;
 
     }
@@ -24,7 +23,9 @@ class Book {
     public function printCard() {
         $image = $this->thumbnailUrl;
         $title = $this->title;
-        //$content = substr($this->longDescription, 0, 100).'...';
+        $content = substr($this->longDescription, 0, 100).'...';
+        $quantity = $this->quantity;
+        $price = $this->price;
         include __DIR__.'/../Views/card.php';
     }
 }
@@ -34,7 +35,10 @@ $bookString = file_get_contents(__DIR__.'/books_db.json');
 $bookList = json_decode($bookString, true);
 $books = [];
 foreach($bookList as $item) {
-    $books[] = new Book($item['id'], $item['title'], $item['thumbnailUrl']);
+    $quantity = rand(2,10);
+    $price = rand(4,20);
+
+    $books[] = new Book( $item['title'], $item['thumbnailUrl'], $item['longDescription'], $quantity, $price);
 }
 
 
